@@ -17,9 +17,11 @@ contract test {
         smallTypeData[127] = 2;
 
         multiple_map[2][1][2].a = 3;
-        for (uint i = 0; i < 4; i++)
-            multiple_map[2][1][2].finalArray.push();
-        multiple_map[2][1][2].finalArray[3] = 5;
+        // for (uint i = 0; i < 4; i++)
+        //     multiple_map[2][1][2].finalArray.push();
+        // multiple_map[2][1][2].finalArray[3] = 5;
+
+        // multiple_map(uint256,uint256,uint256): 2, 1, 2, 3 -> 0, 0, 0, 0, 5
     }
 }
 // ----

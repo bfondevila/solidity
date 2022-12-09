@@ -237,11 +237,6 @@ void ExpressionCompiler::appendStateVariableAccessor(VariableDeclaration const& 
 		// struct
 		for (size_t i = 0; i < names.size(); ++i)
 		{
-			if (returnTypes[i]->category() == Type::Category::Mapping)
-				continue;
-			if (auto arrayType = dynamic_cast<ArrayType const*>(returnTypes[i]))
-				if (!arrayType->isByteArrayOrString())
-					continue;
 			pair<u256, unsigned> const& offsets = structType->storageOffsetsOfMember(names[i]);
 			m_context << Instruction::DUP1 << u256(offsets.first) << Instruction::ADD << u256(offsets.second);
 			Type const* memberType = structType->memberType(names[i]);
